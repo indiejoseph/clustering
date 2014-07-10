@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/indiejoseph/clustering/issues"
   },
-  "homepage": "https://github.com/indiejoseph/clustering"
+  "homepage": "https://github.com/indiejoseph/clustering",
+  "dependencies": {
+    "simhash": "^0.1.0"
+  }
 }

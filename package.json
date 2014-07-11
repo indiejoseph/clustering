@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/indiejoseph/clustering",
   "dependencies": {
+    "lodash": "^2.4.1",
+    "node-kmeans": "0.0.1",
     "simhash": "^0.1.0"
   }
 }

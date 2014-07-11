@@ -30,7 +30,7 @@ for klass in klassFolders when klass isnt DS_STORE
     documents[docFile] = content
 
     # count dict by doc
-    for word in words
+    for word in words when word.length
       docWords[docFile][word] = (docWords[docFile][word]+1 or 1)
 
     # count idf
@@ -42,7 +42,7 @@ totalIDF = Object.keys(idf).length
 for word of idf
   idf[word] = Math.log(totalIDF / (idf[word] + 1))
 
-fs.writeFileSync './idf.json', JSON.stringify(idf, null, 4)
-fs.writeFileSync './doc_words.json', JSON.stringify(docWords, null, 4)
-fs.writeFileSync './doc2kls.json', JSON.stringify(doc2kls, null, 4)
-fs.writeFileSync './docs.json', JSON.stringify(documents, null, 4)
+fs.writeFileSync './data/idf.json', JSON.stringify(idf, null, 4)
+fs.writeFileSync './data/doc_words.json', JSON.stringify(docWords, null, 4)
+fs.writeFileSync './data/doc2kls.json', JSON.stringify(doc2kls, null, 4)
+fs.writeFileSync './data/docs.json', JSON.stringify(documents, null, 4)

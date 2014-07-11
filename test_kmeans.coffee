@@ -25,7 +25,15 @@ for doc in _.take(_.shuffle(Object.keys(documents)), 100)
   counts  = docWords[doc]
   weights = tfidf.calculate(docWords[doc])
   sortTerms = {}
-  sortTerms[w] = counts[w]  for w of weights
+  max = -Infinity
+
+  for w of weights
+    if counts[w] > max
+      max = counts[w]
+    sortTerms[w] = counts[w]
+
+  for w of sortTerms
+    sortTerms[w] = sortTerms[w]/max
 
   docs[doc] =
     weights : weights
